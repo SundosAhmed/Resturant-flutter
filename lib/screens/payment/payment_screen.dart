@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resturent_app11/screens/payment/paymentbloc.dart';
+import 'package:resturent_app11/screens/payment/widget/card.dart';
 import 'package:resturent_app11/shared_widgets/custom_appbar.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -17,15 +18,15 @@ class PaymentScreen extends StatelessWidget {
             Container(
               height: 170,
               child: PageView.builder(
-                  itemCount: 3,
+                  itemCount: 4,
                   controller: bloc.pageController,
                   itemBuilder: (context, index) {
-                    return bloc.cardView(index);
+                    return cardView(index);
                   }),
             ),
             SmoothPageIndicator(
                 controller: bloc.pageController,
-                count: 3,
+                count: 4,
                 effect: const ScrollingDotsEffect(
                   activeStrokeWidth: 2.6,
                   activeDotScale: 1.3,
